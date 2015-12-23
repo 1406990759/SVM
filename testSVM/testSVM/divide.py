@@ -148,3 +148,10 @@ def handle(num):
     remove_noise(img,3)
     img.save('clean\\%d.bmp'%num)
     return cut(img,num)
+
+def handleCAPTCHA(path):
+    img = Image.open(path)
+    binaryzation(img,30)
+    clean(img)
+    remove_noise(img,3)
+    return cut(img,0)
